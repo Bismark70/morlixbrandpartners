@@ -5,7 +5,6 @@ import { db } from "@/lib/db";
 const contactSchema = z.object({
   name: z.string().min(2).max(120),
   email: z.string().email().max(200),
-  phone: z.string().max(40).optional().or(z.literal("")),
   service: z.string().max(120).optional().or(z.literal("")),
   message: z.string().min(10).max(5000),
 });
@@ -22,14 +21,13 @@ export async function POST(req: Request) {
       );
     }
 
-    const { name, email, phone, service, message } = parsed.data;
+    const { name, email, service, message } = parsed.data;
 
     // 1) Persist the enquiry so no lead is ever lost.
     await db.contactMessage.create({
       data: {
         name,
         email,
-        phone: phone || null,
         service: service || null,
         message,
       },
@@ -58,7 +56,6 @@ export async function POST(req: Request) {
              text: [
                `Name:    ${name}`,
                `Email:   ${email}`,
-               `Phone:   ${phone || "—"}`,
                `Service: ${service || "—"}`,
                "",
                message,
@@ -79,7 +76,7 @@ export async function POST(req: Request) {
       {
         ok: false,
         error:
-          "Something went wrong on our side. Please try again or reach us on WhatsApp.",
+          "Something went wrong on our side. Please try again in a moment, or email us directly.",
       },
       { status: 500 }
     );

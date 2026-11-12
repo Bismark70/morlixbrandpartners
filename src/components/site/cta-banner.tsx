@@ -1,7 +1,7 @@
-import { CalendarCheck, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
-import { whatsappLink } from "@/lib/site";
 
 export function CtaBanner() {
   return (
@@ -36,23 +36,12 @@ export function CtaBanner() {
             stands, where you want to go, and map the practical steps to get there.
             No pressure, no obligation.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-9 flex justify-center">
             <Button asChild size="lg" className="h-13 rounded-full bg-gradient-flame px-8 text-base text-white shadow-xl shadow-flame-600/30 transition-transform hover:scale-[1.02]">
-              <a href="#contact">
+              <Link href="/contact">
                 <CalendarCheck className="h-5 w-5" />
                 Book a Free Consultation
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="h-13 rounded-full border-white/25 bg-white/5 px-8 text-base text-white hover:bg-white/10 hover:text-white"
-            >
-              <a href={whatsappLink("Hello Morlix Brand Partners, I'd like to book a free consultation.")} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-5 w-5" />
-                WhatsApp Us Directly
-              </a>
+              </Link>
             </Button>
           </div>
         </Reveal>

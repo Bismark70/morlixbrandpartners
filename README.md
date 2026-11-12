@@ -1,6 +1,6 @@
 # Morlix Brand Partners — Official Website
 
-The official one-page website for **MORLIX BRAND PARTNERS**, built with Next.js 16, TypeScript, Tailwind CSS 4, and Prisma (SQLite). Design language, colors, and identity are taken directly from the Morlix logo — deep navy, ocean blue, and the signature flame-orange orbit.
+The official website for **MORLIX BRAND PARTNERS**, built with Next.js 16, TypeScript, Tailwind CSS 4, and Prisma (SQLite). Design language, colors, and identity are taken directly from the Morlix logo — deep navy, ocean blue, and the signature flame-orange orbit.
 
 > **Your Vision. Our Partnership. Greater Possibilities.**
 
@@ -11,12 +11,13 @@ The official one-page website for **MORLIX BRAND PARTNERS**, built with Next.js 
 | Section | Description |
 | --- | --- |
 | **Hero** | Animated headline, orbit emblem, "who we serve" ticker |
-| **Services** | The six launch services with deliverables per service |
+| **Services** | The six launch services as an expand/collapse accordion — click a service to reveal its deliverables |
 | **Process** | Discover → Strategize → Create → Implement → Measure → Evolve |
-| **About** | Story, Vision, Mission, Our Difference, Core Values, Brand Promise |
-| **FAQ** | Six questions organizations ask before the first conversation |
-| **CTA + Contact** | Consultation banner, contact channels, WhatsApp direct, enquiry form |
-| **Footer** | Full sitemap, services, contact details, socials |
+| **About** | Story, Vision, Mission + one compact band with our difference and core values |
+| **CTA banner** | "Book a Free Consultation" — links to the dedicated contact page |
+| **FAQ** | Six questions organizations ask before the first conversation (last section before the footer) |
+| **`/contact` page** | Dedicated page with an email-first contact card and the enquiry form — all "Contact" and "Book a Free Consultation" buttons navigate here |
+| **Footer** | Compact sitemap, services, and email contact |
 
 Enquiries submitted through the contact form are **stored in a local database** (no lead is ever lost), and the code is pre-wired so you can add email delivery to your business inbox in minutes (see *Receiving form submissions by email*).
 
@@ -59,8 +60,7 @@ Open **http://localhost:3000** in your browser. 🎉
 
 Almost everything editable lives in **`src/lib/site.ts`**:
 
-- **Email, phone number, WhatsApp number** — replace the placeholder values in the `site` object (the WhatsApp link is generated automatically from `whatsapp` digits-only format).
-- **Social media URLs** — under `site.social`.
+- **Email address** — replace the placeholder value in the `site` object (`email` is shown on the site, `emailTo` is where form submissions would be delivered).
 - **Services** — descriptions and deliverables of the six launch services.
 - **Process steps** and **who-we-serve ticker** items.
 
@@ -108,6 +108,8 @@ npm start
 src/
 ├── app/
 │   ├── page.tsx              ← homepage (assembles all sections)
+│   ├── contact/
+│   │   └── page.tsx          ← dedicated contact page (hero, breadcrumb, form)
 │   ├── layout.tsx            ← fonts, SEO metadata, favicon
 │   ├── globals.css           ← brand colors, fonts, animations
 │   └── api/contact/route.ts  ← form endpoint (+ email recipe)
@@ -119,7 +121,7 @@ src/
 │   ├── about.tsx             ← story, vision, mission, values
 │   ├── faq.tsx               ← accordion
 │   ├── cta-banner.tsx        ← consultation banner
-│   ├── contact.tsx           ← contact channels + form
+│   ├── contact.tsx           ← contact channels + form (rendered on /contact)
 │   ├── footer.tsx            ← footer
 │   └── reveal.tsx            ← scroll animation helper
 └── lib/
@@ -131,7 +133,7 @@ public/                       ← logo files & favicons
 
 ## 🔮 Adding Dedicated Service Pages Later
 
-The architecture is ready: every service already has a `slug` in `src/lib/site.ts`. When the organization advances, create `src/app/services/[slug]/page.tsx`, generate static pages from the `services` array, and point the service cards' links to `/services/${slug}` instead of `#contact`.
+The architecture is ready: every service already has a `slug` in `src/lib/site.ts`. When the organization advances, create `src/app/services/[slug]/page.tsx`, generate static pages from the `services` array, and point the service accordion links to `/services/${slug}` instead of `/contact`.
 
 ---
 

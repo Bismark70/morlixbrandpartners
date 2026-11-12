@@ -1,33 +1,20 @@
 import Link from "next/link";
+import { Plus, Minus, ArrowRight } from "lucide-react";
 import {
-  Share2,
-  Palette,
-  CodeXml,
-  TrendingUp,
-  MailPlus,
-  Compass,
-  ArrowRight,
-  type LucideIcon,
-} from "lucide-react";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Reveal } from "@/components/site/reveal";
 import { services } from "@/lib/site";
-import { cn } from "@/lib/utils";
-
-const icons: Record<string, LucideIcon> = {
-  "social-media-management": Share2,
-  "creative-design-brand-identity": Palette,
-  "web-design-development": CodeXml,
-  "digital-marketing": TrendingUp,
-  "email-marketing-automation": MailPlus,
-  "brand-strategy-marketing": Compass,
-};
 
 export function Services() {
   return (
     <section id="services" className="relative scroll-mt-20 bg-white py-20 sm:py-28">
       <div className="bg-dots-light absolute inset-0 opacity-60" aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="What We Do"
           title={
@@ -36,49 +23,56 @@ export function Services() {
               <span className="text-gradient-ocean">One integrated partner.</span>
             </>
           }
-          description="We start with the six services every growing organization needs most — each one built to work with the others, so your brand, platforms and marketing pull in the same direction."
+          description="Click a capability to see how we deliver it — each service is built to work with the others, so your brand, platforms and marketing pull in the same direction."
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {services.map((service, i) => {
-            const Icon = icons[service.slug] ?? Share2;
-            return (
-              <Reveal key={service.slug} delay={(i % 3) * 0.08} className="h-full">
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-flame-500/40 hover:shadow-[0_24px_50px_-20px_rgba(10,33,64,0.28)]">
-                  {/* hover top accent */}
-                  <span
-                    className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-flame transition-transform duration-300 group-hover:scale-x-100"
-                    aria-hidden="true"
-                  />
-                  {/* ghost number */}
-                  <span
-                    className="pointer-events-none absolute -right-2 -top-5 font-display text-[5.5rem] font-bold leading-none text-navy-700/[0.06] transition-colors duration-300 group-hover:text-flame-500/10"
-                    aria-hidden="true"
-                  >
-                    {service.num}
+        <Reveal delay={0.05} className="mt-12">
+          <Accordion
+            type="single"
+            collapsible
+            defaultValue={services[0].slug}
+            className="space-y-4"
+          >
+            {services.map((service) => (
+              <AccordionItem
+                key={service.slug}
+                value={service.slug}
+                className="group rounded-2xl border border-border bg-white px-5 shadow-sm transition-all duration-300 hover:border-navy-700/30 hover:shadow-md data-[state=open]:border-transparent data-[state=open]:bg-navy-800 data-[state=open]:shadow-xl data-[state=open]:shadow-navy-900/25 sm:px-7"
+              >
+                <AccordionTrigger className="gap-4 py-5 hover:no-underline [&>svg]:hidden sm:py-6">
+                  {/* Left: number / category / title */}
+                  <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-flame-600 transition-colors duration-300 group-data-[state=open]:text-glow-amber">
+                      {service.num} / {service.code}
+                    </span>
+                    <span className="font-display text-lg font-bold leading-snug text-navy-800 transition-colors duration-300 group-data-[state=open]:text-white sm:text-xl">
+                      {service.title}
+                    </span>
                   </span>
 
-                  <div className="flex items-center gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-navy-700 to-ocean-500 text-white shadow-md shadow-navy-700/25 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
-                      <Icon className="h-6 w-6" aria-hidden="true" />
-                    </span>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-flame-600">
-                      {service.num} / {service.code}
-                    </p>
-                  </div>
+                  {/* Right: plus / minus toggle */}
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-navy-700/20 text-navy-700 transition-all duration-300 group-data-[state=open]:border-glow-amber/50 group-data-[state=open]:bg-white/10 group-data-[state=open]:text-glow-amber"
+                    aria-hidden="true"
+                  >
+                    <Plus className="h-5 w-5 group-data-[state=open]:hidden" strokeWidth={2.2} />
+                    <Minus className="hidden h-5 w-5 group-data-[state=open]:block" strokeWidth={2.2} />
+                  </span>
+                </AccordionTrigger>
 
-                  <h3 className="mt-5 font-display text-xl font-bold leading-snug text-navy-800">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <AccordionContent className="pb-6">
+                  <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-data-[state=open]:text-white/70 sm:text-[15px]">
                     {service.description}
                   </p>
 
-                  <ul className="mt-5 flex flex-wrap gap-1.5" aria-label={`Included in ${service.title}`}>
+                  <ul
+                    className="mt-4 flex flex-wrap gap-1.5"
+                    aria-label={`Included in ${service.title}`}
+                  >
                     {service.deliverables.map((d) => (
                       <li
                         key={d}
-                        className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-medium text-navy-700"
+                        className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-medium text-navy-700 transition-colors duration-300 group-data-[state=open]:bg-white/10 group-data-[state=open]:text-white/80"
                       >
                         {d}
                       </li>
@@ -86,27 +80,23 @@ export function Services() {
                   </ul>
 
                   <Link
-                    href={`#contact`}
-                    className={cn(
-                      "mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 transition-colors hover:text-flame-600"
-                    )}
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 transition-colors hover:text-flame-600 group-data-[state=open]:text-glow-amber group-data-[state=open]:hover:text-glow-amber"
                   >
                     Start with this service
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
-                </article>
-              </Reveal>
-            );
-          })}
-        </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </Reveal>
 
         {/* Future-facing note */}
-        <Reveal delay={0.1} className="mt-12 text-center">
+        <Reveal delay={0.1} className="mt-8 text-center">
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            These are our launch services. As{" "}
-            <span className="font-semibold text-navy-700">Morlix Brand Partners</span>{" "}
-            grows, our full ecosystem — software solutions, AI & automation, data
-            intelligence, and more — will be added to serve you at every stage.
+            These are our launch services — our full ecosystem (software, AI &
+            automation, data intelligence and more) will be added as Morlix grows.
           </p>
         </Reveal>
       </div>

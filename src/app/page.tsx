@@ -3,9 +3,8 @@ import { Hero } from "@/components/site/hero";
 import { Services } from "@/components/site/services";
 import { Process } from "@/components/site/process";
 import { About } from "@/components/site/about";
-import { Faq } from "@/components/site/faq";
 import { CtaBanner } from "@/components/site/cta-banner";
-import { Contact } from "@/components/site/contact";
+import { Faq } from "@/components/site/faq";
 import { Footer } from "@/components/site/footer";
 import { site, services } from "@/lib/site";
 
@@ -16,7 +15,6 @@ const orgJsonLd = {
   name: site.legalName,
   slogan: site.tagline,
   email: site.email,
-  telephone: site.phone,
   description:
     "Brand development, digital solutions, and business innovation company — combining strategy, creativity, technology, marketing, and data to build stronger brands.",
   knowsAbout: services.map((s) => s.title),
@@ -36,9 +34,8 @@ export default function Home() {
         <Services />
         <Process />
         <About />
-        <Faq />
         <CtaBanner />
-        <Contact />
+        <Faq />
       </main>
       <Footer />
     </>

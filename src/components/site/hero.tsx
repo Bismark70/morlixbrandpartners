@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, CalendarCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -78,10 +79,10 @@ export function Hero() {
 
             <motion.div {...item(0.32)} className="mt-9 flex flex-wrap items-center gap-4">
               <Button asChild size="lg" className="h-13 rounded-full bg-gradient-flame px-7 text-base text-white shadow-xl shadow-flame-600/30 transition-transform hover:scale-[1.02]">
-                <a href="#contact">
+                <Link href="/contact">
                   <CalendarCheck className="h-5 w-5" />
                   Book a Free Consultation
-                </a>
+                </Link>
               </Button>
               <Button
                 asChild

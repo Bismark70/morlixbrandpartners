@@ -1,9 +1,9 @@
 /* ============================================================
    MORLIX BRAND PARTNERS — Site Configuration
    ------------------------------------------------------------
-   ★ EDIT THIS FILE to update contact details, socials, services
-   and any site-wide copy. Everything on the website reads from
-   here, so you never have to dig through components.
+   ★ EDIT THIS FILE to update contact details, services and any
+   site-wide copy. Everything on the website reads from here,
+   so you never have to dig through components.
    ============================================================ */
 
 export const site = {
@@ -15,33 +15,17 @@ export const site = {
 
   /* ----------------------------------------------------------
      CONTACT DETAILS — ★ replace the placeholders below ★
-     · email     : shown in contact cards, footer & metadata
-     · phone     : displayed exactly as written
-     · whatsapp  : digits only, international format, no "+" or
-                   spaces — used to build the wa.me direct link
-     · emailTo   : the business inbox that should receive form
-                   submissions once you wire up email delivery
-                   (see src/app/api/contact/route.ts)
+     · email   : the business inbox shown on the contact page,
+                 footer & metadata — the single contact channel
+     · emailTo : the inbox that should receive form submissions
+                 once you wire up email delivery
+                 (see src/app/api/contact/route.ts)
   ---------------------------------------------------------- */
   email: "info@morlixbrandpartners.com",
-  phone: "+233 55 123 4567",
-  whatsapp: "233551234567",
   emailTo: "hello@morlixbrandpartners.com",
   location: "Serving clients locally & globally",
   responseNote: "We typically respond within one business day.",
-
-  social: {
-    linkedin: "https://www.linkedin.com/",
-    instagram: "https://www.instagram.com/",
-    facebook: "https://www.facebook.com/",
-    x: "https://x.com/",
-  },
 } as const;
-
-export const whatsappLink = (message?: string) =>
-  `https://wa.me/${site.whatsapp}${
-    message ? `?text=${encodeURIComponent(message)}` : ""
-  }`;
 
 /* ------------------------------------------------------------
    THE SIX LAUNCH SERVICES

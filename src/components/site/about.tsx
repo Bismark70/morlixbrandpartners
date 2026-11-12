@@ -15,31 +15,31 @@ import {
 import { SectionHeading } from "@/components/site/section-heading";
 import { Reveal } from "@/components/site/reveal";
 
-const values: { label: string; icon: LucideIcon; blurb: string }[] = [
-  { label: "Innovation", icon: Lightbulb, blurb: "Open to new ideas, technologies, and ways of solving problems." },
-  { label: "Creativity", icon: Sparkles, blurb: "Strong ideas change how organizations communicate and compete." },
-  { label: "Excellence", icon: Award, blurb: "Quality and professionalism in every assignment." },
-  { label: "Integrity", icon: ShieldCheck, blurb: "Trust earned through honesty, transparency, and accountability." },
-  { label: "Collaboration", icon: Handshake, blurb: "We work alongside clients, not simply for them." },
-  { label: "Adaptability", icon: RefreshCw, blurb: "Solutions that evolve as fast as digital environments do." },
-  { label: "Impact", icon: HeartHandshake, blurb: "We care about the value our work creates, not the project count." },
+const values: { label: string; icon: LucideIcon }[] = [
+  { label: "Innovation", icon: Lightbulb },
+  { label: "Creativity", icon: Sparkles },
+  { label: "Excellence", icon: Award },
+  { label: "Integrity", icon: ShieldCheck },
+  { label: "Collaboration", icon: Handshake },
+  { label: "Adaptability", icon: RefreshCw },
+  { label: "Impact", icon: HeartHandshake },
 ];
 
 const difference = [
   {
     icon: Layers,
     title: "One integrated ecosystem",
-    text: "Branding, design, technology, marketing, data, innovation, and strategy — connected under one organization instead of scattered across providers.",
+    text: "Branding, design, technology, marketing, and strategy — under one roof.",
   },
   {
     icon: Users,
     title: "A partner, not a vendor",
-    text: "We work alongside you to understand ambitions and challenges before recommending anything — solutions aligned with your real objectives.",
+    text: "We understand your goals before recommending anything.",
   },
   {
     icon: Target,
     title: "Built to grow with you",
-    text: "From idea to launch, launch to growth, growth to transformation — support for every stage of your organization's journey.",
+    text: "Support at every stage, from first idea to full transformation.",
   },
 ];
 
@@ -128,62 +128,41 @@ export function About() {
           </div>
         </div>
 
-        {/* ——— Our Difference ——— */}
-        <div className="mt-20">
-          <SectionHeading
-            eyebrow="Our Difference"
-            title={
-              <>
-                Why organizations choose{" "}
-                <span className="text-gradient-flame">Morlix</span>
-              </>
-            }
-            description="The digital industry is crowded with companies offering individual services. We take a broader approach — capabilities that usually live in separate companies, working together as one."
-          />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {difference.map((item, i) => (
-              <Reveal key={item.title} delay={i * 0.08} className="h-full">
-                <article className="h-full rounded-2xl border border-border bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-flame-600">
+        {/* ——— Difference + values (compact band) ——— */}
+        <Reveal className="mt-16">
+          <div className="rounded-3xl border border-border bg-white p-7 shadow-sm sm:p-9">
+            <div className="grid gap-7 md:grid-cols-3">
+              {difference.map((item) => (
+                <div key={item.title} className="flex items-start gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-flame-600">
                     <item.icon className="h-5.5 w-5.5" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-4 font-display text-lg font-bold text-navy-800">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-navy-800">{item.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-        {/* ——— Core values ——— */}
-        <div className="mt-20">
-          <SectionHeading
-            eyebrow="Our Core Values"
-            title="The principles behind every project"
-          />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, i) => (
-              <Reveal key={value.label} delay={(i % 4) * 0.06} className="h-full">
-                <article className="group h-full rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:border-navy-700/30 hover:shadow-md">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-navy-700 transition-colors group-hover:bg-navy-700 group-hover:text-white">
-                    <value.icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-4 font-display text-base font-bold text-navy-800">{value.label}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{value.blurb}</p>
-                </article>
-              </Reveal>
-            ))}
-            {/* Brand promise tile completes the grid */}
-            <Reveal delay={0.18} className="h-full">
-              <article className="flex h-full flex-col justify-between rounded-2xl bg-gradient-flame p-6 text-white shadow-lg shadow-flame-500/25">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/85">Our Brand Promise</p>
-                <p className="mt-4 font-display text-lg font-bold leading-snug">
-                  We help organizations build for today while preparing for tomorrow.
-                </p>
-              </article>
-            </Reveal>
+            <div className="mt-7 flex flex-col gap-4 border-t border-border pt-7 sm:flex-row sm:items-center sm:justify-between">
+              <ul className="flex flex-wrap items-center gap-2" aria-label="Our core values">
+                {values.map((value) => (
+                  <li
+                    key={value.label}
+                    className="flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-navy-700"
+                  >
+                    <value.icon className="h-3.5 w-3.5 text-flame-600" aria-hidden="true" />
+                    {value.label}
+                  </li>
+                ))}
+              </ul>
+              <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-flame-600">
+                Our promise — build for today, prepare for tomorrow.
+              </p>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

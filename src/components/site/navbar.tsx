@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, MessageCircle, CalendarCheck } from "lucide-react";
+import { Menu, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -13,15 +13,15 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import { site, whatsappLink } from "@/lib/site";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "About", href: "/#about" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -60,32 +60,22 @@ export function Navbar() {
         {/* Desktop nav */}
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="rounded-full px-4 py-2 text-sm font-medium text-navy-800/80 transition-colors hover:bg-secondary hover:text-navy-800"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button
-            asChild
-            variant="outline"
-            className="rounded-full border-navy-700/25 text-navy-800 hover:bg-secondary hover:text-navy-800"
-          >
-            <a href={whatsappLink("Hello Morlix Brand Partners, I'd like to make an enquiry.")} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp
-            </a>
-          </Button>
           <Button asChild className="rounded-full bg-gradient-flame text-white shadow-lg shadow-flame-500/30 hover:opacity-90">
-            <a href="#contact">
+            <Link href="/contact">
               <CalendarCheck className="h-4 w-4" />
               Book a Free Consultation
-            </a>
+            </Link>
           </Button>
         </div>
 
@@ -114,29 +104,21 @@ export function Navbar() {
             <nav aria-label="Mobile" className="flex flex-col gap-1 px-4 py-4">
               {navLinks.map((link) => (
                 <SheetClose asChild key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="rounded-xl px-4 py-3 text-base font-medium text-navy-800 transition-colors hover:bg-secondary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </SheetClose>
               ))}
               <div className="mt-4 flex flex-col gap-3 border-t border-border px-2 pt-5">
                 <SheetClose asChild>
                   <Button asChild className="h-12 rounded-full bg-gradient-flame text-white shadow-lg shadow-flame-500/30">
-                    <a href="#contact">
+                    <Link href="/contact">
                       <CalendarCheck className="h-4 w-4" />
                       Book a Free Consultation
-                    </a>
-                  </Button>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Button asChild variant="outline" className="h-12 rounded-full border-navy-700/25 text-navy-800">
-                    <a href={whatsappLink("Hello Morlix Brand Partners, I'd like to make an enquiry.")} target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="h-4 w-4" />
-                      Chat on WhatsApp
-                    </a>
+                    </Link>
                   </Button>
                 </SheetClose>
               </div>
