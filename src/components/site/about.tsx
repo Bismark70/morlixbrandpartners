@@ -1,47 +1,6 @@
-import {
-  Lightbulb,
-  Sparkles,
-  Award,
-  ShieldCheck,
-  Handshake,
-  RefreshCw,
-  HeartHandshake,
-  Layers,
-  Users,
-  Target,
-  Quote,
-  type LucideIcon,
-} from "lucide-react";
+import { Quote } from "lucide-react";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Reveal } from "@/components/site/reveal";
-
-const values: { label: string; icon: LucideIcon }[] = [
-  { label: "Innovation", icon: Lightbulb },
-  { label: "Creativity", icon: Sparkles },
-  { label: "Excellence", icon: Award },
-  { label: "Integrity", icon: ShieldCheck },
-  { label: "Collaboration", icon: Handshake },
-  { label: "Adaptability", icon: RefreshCw },
-  { label: "Impact", icon: HeartHandshake },
-];
-
-const difference = [
-  {
-    icon: Layers,
-    title: "One integrated ecosystem",
-    text: "Branding, design, technology, marketing, and strategy — under one roof.",
-  },
-  {
-    icon: Users,
-    title: "A partner, not a vendor",
-    text: "We understand your goals before recommending anything.",
-  },
-  {
-    icon: Target,
-    title: "Built to grow with you",
-    text: "Support at every stage, from first idea to full transformation.",
-  },
-];
 
 export function About() {
   return (
@@ -69,7 +28,7 @@ export function About() {
                   strategies that translate visibility into meaningful results.
                 </p>
                 <p>
-                  That is where <strong className="font-semibold text-navy-800">Morlix Brand Partners</strong> comes
+                  That is where <strong className="font-semibold text-navy-800 dark:text-slate-100">Morlix Brand</strong> comes
                   in. We believe branding, technology, marketing, creativity, data,
                   and strategy should work together — a company&apos;s website should
                   reflect its brand, its social media should communicate a consistent
@@ -87,9 +46,9 @@ export function About() {
 
             {/* Philosophy quote */}
             <Reveal delay={0.14}>
-              <blockquote className="mt-8 rounded-2xl border border-flame-500/20 bg-white p-6 shadow-sm">
+              <blockquote className="mt-8 rounded-2xl border border-flame-500/20 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-card">
                 <Quote className="h-5 w-5 text-flame-500" aria-hidden="true" />
-                <p className="mt-2 font-display text-lg font-semibold leading-snug text-navy-800">
+                <p className="mt-2 font-display text-lg font-semibold leading-snug text-navy-800 dark:text-slate-100">
                   Think strategically. Build confidently. Grow sustainably.
                 </p>
                 <footer className="mt-2 text-sm text-muted-foreground">
@@ -116,9 +75,9 @@ export function About() {
               </article>
             </Reveal>
             <Reveal delay={0.18}>
-              <article className="rounded-2xl border border-border bg-white p-8 shadow-sm">
+              <article className="rounded-2xl border border-border bg-white p-8 shadow-sm dark:border-white/10 dark:bg-card">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-flame-600">Our Mission</p>
-                <p className="mt-4 font-display text-xl font-semibold leading-relaxed text-navy-800">
+                <p className="mt-4 font-display text-xl font-semibold leading-relaxed text-navy-800 dark:text-slate-100">
                   To empower organizations through innovative technology, creative
                   excellence, strategic marketing, and integrated brand solutions
                   that transform ideas into measurable impact.
@@ -127,42 +86,6 @@ export function About() {
             </Reveal>
           </div>
         </div>
-
-        {/* ——— Difference + values (compact band) ——— */}
-        <Reveal className="mt-16">
-          <div className="rounded-3xl border border-border bg-white p-7 shadow-sm sm:p-9">
-            <div className="grid gap-7 md:grid-cols-3">
-              {difference.map((item) => (
-                <div key={item.title} className="flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent text-flame-600">
-                    <item.icon className="h-5.5 w-5.5" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <h3 className="font-display text-base font-bold text-navy-800">{item.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-7 flex flex-col gap-4 border-t border-border pt-7 sm:flex-row sm:items-center sm:justify-between">
-              <ul className="flex flex-wrap items-center gap-2" aria-label="Our core values">
-                {values.map((value) => (
-                  <li
-                    key={value.label}
-                    className="flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-navy-700"
-                  >
-                    <value.icon className="h-3.5 w-3.5 text-flame-600" aria-hidden="true" />
-                    {value.label}
-                  </li>
-                ))}
-              </ul>
-              <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-flame-600">
-                Our promise — build for today, prepare for tomorrow.
-              </p>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

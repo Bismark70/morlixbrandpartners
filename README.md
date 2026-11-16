@@ -1,6 +1,6 @@
-# Morlix Brand Partners — Official Website
+# Morlix Brand — Official Website
 
-The official website for **MORLIX BRAND PARTNERS**, built with Next.js 16, TypeScript, Tailwind CSS 4, and Prisma (SQLite). Design language, colors, and identity are taken directly from the Morlix logo — deep navy, ocean blue, and the signature flame-orange orbit.
+The official website for **MORLIX BRAND**, built with Next.js 16, TypeScript, Tailwind CSS 4, and Prisma (SQLite). Design language, colors, and identity are taken directly from the Morlix logo — deep navy, ocean blue, and the signature flame-orange orbit.
 
 > **Your Vision. Our Partnership. Greater Possibilities.**
 
@@ -137,4 +137,4 @@ The architecture is ready: every service already has a `slug` in `src/lib/site.t
 
 ---
 
-**MORLIX BRAND PARTNERS** — Strategy · Creativity · Technology · Innovation · Impact
+**MORLIX BRAND** — Strategy · Creativity · Technology · Innovation · Impact

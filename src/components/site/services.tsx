@@ -12,14 +12,14 @@ import { services } from "@/lib/site";
 
 export function Services() {
   return (
-    <section id="services" className="relative scroll-mt-20 bg-white py-20 sm:py-28">
+    <section id="services" className="relative scroll-mt-20 bg-white py-20 sm:py-28 dark:bg-transparent">
       <div className="bg-dots-light absolute inset-0 opacity-60" aria-hidden="true" />
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="What We Do"
           title={
             <>
-              Six capabilities.{" "}
+              Every capability.{" "}
               <span className="text-gradient-ocean">One integrated partner.</span>
             </>
           }
@@ -37,22 +37,22 @@ export function Services() {
               <AccordionItem
                 key={service.slug}
                 value={service.slug}
-                className="group rounded-2xl border border-border bg-white px-5 shadow-sm transition-all duration-300 hover:border-navy-700/30 hover:shadow-md data-[state=open]:border-transparent data-[state=open]:bg-navy-800 data-[state=open]:shadow-xl data-[state=open]:shadow-navy-900/25 sm:px-7"
+                className="group rounded-2xl border border-border bg-white px-5 shadow-sm transition-all duration-300 hover:border-flame-500/40 hover:bg-accent hover:shadow-md dark:border-white/10 dark:bg-card dark:hover:border-flame-500/40 dark:hover:bg-white/[0.06] data-[state=open]:border-transparent data-[state=open]:bg-[linear-gradient(120deg,#fbae3c_0%,#f97316_45%,#e8481d_100%)] data-[state=open]:shadow-xl data-[state=open]:shadow-flame-600/30 sm:px-7"
               >
                 <AccordionTrigger className="gap-4 py-5 hover:no-underline [&>svg]:hidden sm:py-6">
-                  {/* Left: number / category / title */}
+                  {/* Left: category / title */}
                   <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-flame-600 transition-colors duration-300 group-data-[state=open]:text-glow-amber">
-                      {service.num} / {service.code}
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-flame-600 transition-colors duration-300 group-data-[state=open]:text-white/85">
+                      {service.code}
                     </span>
-                    <span className="font-display text-lg font-bold leading-snug text-navy-800 transition-colors duration-300 group-data-[state=open]:text-white sm:text-xl">
+                    <span className="font-display text-lg font-bold leading-snug text-navy-800 transition-colors duration-300 group-data-[state=open]:text-white sm:text-xl dark:text-slate-100">
                       {service.title}
                     </span>
                   </span>
 
                   {/* Right: plus / minus toggle */}
                   <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-navy-700/20 text-navy-700 transition-all duration-300 group-data-[state=open]:border-glow-amber/50 group-data-[state=open]:bg-white/10 group-data-[state=open]:text-glow-amber"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-navy-700/20 text-navy-700 transition-all duration-300 group-data-[state=open]:border-white/50 group-data-[state=open]:bg-white/15 group-data-[state=open]:text-white dark:border-white/15 dark:text-slate-300"
                     aria-hidden="true"
                   >
                     <Plus className="h-5 w-5 group-data-[state=open]:hidden" strokeWidth={2.2} />
@@ -61,7 +61,7 @@ export function Services() {
                 </AccordionTrigger>
 
                 <AccordionContent className="pb-6">
-                  <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-data-[state=open]:text-white/70 sm:text-[15px]">
+                  <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-data-[state=open]:text-white/85 sm:text-[15px]">
                     {service.description}
                   </p>
 
@@ -72,7 +72,7 @@ export function Services() {
                     {service.deliverables.map((d) => (
                       <li
                         key={d}
-                        className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-medium text-navy-700 transition-colors duration-300 group-data-[state=open]:bg-white/10 group-data-[state=open]:text-white/80"
+                        className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-medium text-navy-700 transition-colors duration-300 group-data-[state=open]:bg-white/15 group-data-[state=open]:text-white dark:text-slate-200 dark:group-data-[state=open]:bg-white/15 dark:group-data-[state=open]:text-white"
                       >
                         {d}
                       </li>
@@ -81,7 +81,7 @@ export function Services() {
 
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 transition-colors hover:text-flame-600 group-data-[state=open]:text-glow-amber group-data-[state=open]:hover:text-glow-amber"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 transition-colors hover:text-flame-600 group-data-[state=open]:text-white group-data-[state=open]:hover:text-white/75 dark:text-slate-300 dark:hover:text-flame-400 dark:group-data-[state=open]:text-white dark:group-data-[state=open]:hover:text-white/75"
                   >
                     Start with this service
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -90,14 +90,6 @@ export function Services() {
               </AccordionItem>
             ))}
           </Accordion>
-        </Reveal>
-
-        {/* Future-facing note */}
-        <Reveal delay={0.1} className="mt-8 text-center">
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            These are our launch services — our full ecosystem (software, AI &
-            automation, data intelligence and more) will be added as Morlix grows.
-          </p>
         </Reveal>
       </div>
     </section>

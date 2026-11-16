@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/lib/site";
 
 const inter = Inter({
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.legalName}`,
   },
   description:
-    "Morlix Brand Partners is a brand development, digital solutions, and business innovation company — combining strategy, creativity, technology, marketing, and data to build stronger brands and meaningful digital growth.",
+    "Morlix Brand is a brand development, digital solutions, and business innovation company — combining strategy, creativity, technology, marketing, and data to build stronger brands and meaningful digital growth.",
   keywords: [
     "brand development",
     "digital solutions",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     "email marketing automation",
     "brand strategy",
     "creative design",
-    "Morlix Brand Partners",
+    "Morlix Brand",
   ],
   authors: [{ name: site.legalName }],
   icons: {
@@ -76,8 +77,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
-        {children}
-        <Toaster />
+        <ThemeProvider>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

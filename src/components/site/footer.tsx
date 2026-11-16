@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { site, services } from "@/lib/site";
 
 const quickLinks = [
@@ -30,7 +30,7 @@ export function Footer() {
             />
             <div>
               <p className="font-display text-base font-bold leading-tight tracking-wide">
-                MORLIX <span className="text-gradient-flame">BRAND PARTNERS</span>
+                MORLIX <span className="text-gradient-flame">BRAND</span>
               </p>
               <p className="mt-1.5 text-[10px] uppercase tracking-[0.2em] text-white/50">
                 Strategy · Creativity · Technology · Innovation · Impact
@@ -79,7 +79,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact — email only */}
+          {/* Contact — email + WhatsApp */}
           <div>
             <h3 className="font-display text-xs font-bold uppercase tracking-[0.16em] text-white/85">
               Get In Touch
@@ -90,6 +90,15 @@ export function Footer() {
             >
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white/40 group-hover:text-glow-amber" aria-hidden="true" />
               {site.email}
+            </a>
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-2.5 flex items-start gap-3 text-sm text-white/60 transition-colors hover:text-glow-amber"
+            >
+              <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-white/40 group-hover:text-glow-amber" aria-hidden="true" />
+              WhatsApp — {site.whatsapp}
             </a>
           </div>
         </div>

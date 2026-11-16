@@ -16,6 +16,7 @@ import {
   ChevronDown,
   ShieldCheck,
   ArrowRight,
+  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -92,7 +93,7 @@ export function Contact() {
           <div className="flex flex-col gap-4">
             <Reveal>
               <a
-                href={`mailto:${site.email}?subject=Project%20enquiry%20for%20Morlix%20Brand%20Partners`}
+                href={`mailto:${site.email}?subject=Project%20enquiry%20for%20Morlix%20Brand`}
                 className="group relative block overflow-hidden rounded-3xl bg-gradient-navy p-7 text-white shadow-xl shadow-navy-900/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy-900/30 sm:p-8"
               >
                 <div className="bg-dots absolute inset-0 opacity-60" aria-hidden="true" />
@@ -118,24 +119,53 @@ export function Contact() {
               </a>
             </Reveal>
 
+            <Reveal delay={0.06}>
+              <a
+                href={site.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block overflow-hidden rounded-3xl border border-border bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#25d366]/40 hover:shadow-xl hover:shadow-[#25d366]/10 dark:border-white/10 dark:bg-card dark:hover:border-[#25d366]/50 sm:p-8"
+              >
+                <span
+                  className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#25d366]/10 blur-2xl"
+                  aria-hidden="true"
+                />
+                <div className="relative">
+                  <span className="flex h-13 w-13 items-center justify-center rounded-2xl bg-[#25d366]/10 ring-1 ring-[#25d366]/25 transition-transform duration-300 group-hover:scale-105">
+                    <MessageCircle className="h-6 w-6 text-[#25d366]" aria-hidden="true" />
+                  </span>
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    Chat with us on WhatsApp
+                  </p>
+                  <p className="mt-2 font-display text-xl font-bold leading-snug text-navy-800 dark:text-slate-100 sm:text-2xl">
+                    {site.whatsapp}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#25d366]/10 px-4 py-2 text-sm font-semibold text-navy-800 dark:text-slate-100 ring-1 ring-[#25d366]/30 transition-colors duration-300 group-hover:bg-[#25d366] group-hover:text-white">
+                    Start a chat
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+
             <Reveal delay={0.12}>
-              <div className="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6">
+              <div className="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6 dark:border-white/10 dark:bg-card">
                 <div className="flex items-start gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-navy-700">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-navy-700 dark:bg-white/10 dark:text-slate-200">
                     <MapPin className="h-5.5 w-5.5" aria-hidden="true" />
                   </span>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Where we work</p>
-                    <p className="font-display text-base font-semibold text-navy-800">{site.location}</p>
+                    <p className="font-display text-base font-semibold text-navy-800 dark:text-slate-100">{site.location}</p>
                   </div>
                 </div>
                 <div className="mt-4 flex items-start gap-4 border-t border-border pt-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-navy-700">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-navy-700 dark:bg-white/10 dark:text-slate-200">
                     <Clock className="h-5.5 w-5.5" aria-hidden="true" />
                   </span>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Response time</p>
-                    <p className="font-display text-base font-semibold text-navy-800">{site.responseNote}</p>
+                    <p className="font-display text-base font-semibold text-navy-800 dark:text-slate-100">{site.responseNote}</p>
                   </div>
                 </div>
               </div>
@@ -144,15 +174,15 @@ export function Contact() {
 
           {/* ——— Form ——— */}
           <Reveal delay={0.08}>
-            <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-xl shadow-navy-900/[0.07]">
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-xl shadow-navy-900/[0.07] dark:border-white/10 dark:bg-card dark:shadow-black/40">
               <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-flame" aria-hidden="true" />
 
               {submitted ? (
-                <div className="flex min-h-[480px] flex-col items-center justify-center px-6 text-center" role="status">
+                <div className="flex min-h-[560px] flex-col items-center justify-center px-6 text-center" role="status">
                   <span className="flex h-16 w-16 items-center justify-center rounded-full bg-accent">
                     <CheckCircle2 className="h-8 w-8 text-flame-600" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-5 font-display text-2xl font-bold text-navy-800">
+                  <h3 className="mt-5 font-display text-2xl font-bold text-navy-800 dark:text-slate-100">
                     Thank you — your message is in!
                   </h3>
                   <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
@@ -165,7 +195,7 @@ export function Contact() {
                   </p>
                   <Button
                     variant="outline"
-                    className="mt-7 rounded-full border-navy-700/25 text-navy-800"
+                    className="mt-7 rounded-full border-navy-700/25 text-navy-800 dark:text-slate-100 dark:border-white/20 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:text-white"
                     onClick={() => setSubmitted(false)}
                   >
                     Send another message
@@ -179,11 +209,11 @@ export function Contact() {
                       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-flame-600">
                         Start a project
                       </p>
-                      <h3 className="mt-1.5 font-display text-2xl font-bold text-navy-800">
+                      <h3 className="mt-1.5 font-display text-2xl font-bold text-navy-800 dark:text-slate-100">
                         Tell us about your project
                       </h3>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-navy-800">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-navy-800 dark:text-slate-100">
                       <Clock className="h-3.5 w-3.5 text-flame-600" aria-hidden="true" />
                       Reply within 1 business day
                     </span>
@@ -192,7 +222,7 @@ export function Contact() {
                   <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-7 space-y-5">
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="name" className="text-sm font-medium text-navy-800">
+                        <Label htmlFor="name" className="text-sm font-medium text-navy-800 dark:text-slate-100">
                           Full name <span className="text-flame-600">*</span>
                         </Label>
                         <div className="relative">
@@ -209,7 +239,7 @@ export function Contact() {
                         {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email" className="text-sm font-medium text-navy-800">
+                        <Label htmlFor="email" className="text-sm font-medium text-navy-800 dark:text-slate-100">
                           Email address <span className="text-flame-600">*</span>
                         </Label>
                         <div className="relative">
@@ -229,7 +259,7 @@ export function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="service" className="text-sm font-medium text-navy-800">
+                      <Label htmlFor="service" className="text-sm font-medium text-navy-800 dark:text-slate-100">
                         I&apos;m interested in
                       </Label>
                       <div className="relative">
@@ -254,16 +284,16 @@ export function Contact() {
 
                     <div className="space-y-2">
                       <div className="flex items-baseline justify-between">
-                        <Label htmlFor="message" className="text-sm font-medium text-navy-800">
+                        <Label htmlFor="message" className="text-sm font-medium text-navy-800 dark:text-slate-100">
                           Tell us about your project <span className="text-flame-600">*</span>
                         </Label>
                         <span className="text-xs text-muted-foreground">A few sentences is plenty</span>
                       </div>
                       <Textarea
                         id="message"
-                        rows={6}
+                        rows={9}
                         placeholder="What are you building, improving, or trying to achieve? Any timelines or goals worth mentioning?"
-                        className="resize-none rounded-xl border-border bg-muted/40 text-[15px] transition-colors placeholder:text-muted-foreground/60 focus-visible:border-flame-500/60 focus-visible:ring-2 focus-visible:ring-flame-500/25"
+                        className="min-h-[210px] resize-none rounded-xl border-border bg-muted/40 text-[15px] transition-colors placeholder:text-muted-foreground/60 focus-visible:border-flame-500/60 focus-visible:ring-2 focus-visible:ring-flame-500/25"
                         aria-invalid={!!errors.message}
                         {...register("message")}
                       />
@@ -272,7 +302,7 @@ export function Contact() {
 
                     <div className="flex flex-col gap-4 pt-1 sm:flex-row sm:items-center sm:justify-between">
                       <p className="flex items-start gap-2 text-xs leading-relaxed text-muted-foreground sm:max-w-[15rem]">
-                        <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-navy-700/50" aria-hidden="true" />
+                        <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-navy-700/50 dark:text-slate-400" aria-hidden="true" />
                         Your details stay private — used only to respond to your enquiry.
                       </p>
                       <Button

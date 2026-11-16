@@ -1,5 +1,5 @@
 /* ============================================================
-   MORLIX BRAND PARTNERS — Site Configuration
+   MORLIX BRAND — Site Configuration
    ------------------------------------------------------------
    ★ EDIT THIS FILE to update contact details, services and any
    site-wide copy. Everything on the website reads from here,
@@ -7,9 +7,9 @@
    ============================================================ */
 
 export const site = {
-  name: "Morlix Brand Partners",
+  name: "Morlix Brand",
   shortName: "Morlix",
-  legalName: "MORLIX BRAND PARTNERS",
+  legalName: "MORLIX BRAND",
   tagline: "Your Vision. Our Partnership. Greater Possibilities.",
   pillars: ["Strategy", "Creativity", "Technology", "Innovation", "Impact"],
 
@@ -23,17 +23,17 @@ export const site = {
   ---------------------------------------------------------- */
   email: "info@morlixbrandpartners.com",
   emailTo: "hello@morlixbrandpartners.com",
+  whatsapp: "059 151 7852",
+  whatsappLink: "https://wa.me/233591517852",
   location: "Serving clients locally & globally",
   responseNote: "We typically respond within one business day.",
 } as const;
 
 /* ------------------------------------------------------------
-   THE SIX LAUNCH SERVICES
-   Numbered exactly as the organization's launch offering.
+   OUR SERVICES
    `slug` is ready for future dedicated service pages.
 ------------------------------------------------------------ */
 export type Service = {
-  num: string;
   code: string;
   title: string;
   slug: string;
@@ -43,7 +43,6 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    num: "01",
     code: "Digital Presence",
     title: "Social Media Management",
     slug: "social-media-management",
@@ -58,7 +57,6 @@ export const services: Service[] = [
     ],
   },
   {
-    num: "02",
     code: "Visual Intelligence",
     title: "Creative Design & Brand Identity",
     slug: "creative-design-brand-identity",
@@ -73,7 +71,6 @@ export const services: Service[] = [
     ],
   },
   {
-    num: "03",
     code: "Digital Infrastructure",
     title: "Web Design & Development",
     slug: "web-design-development",
@@ -88,7 +85,6 @@ export const services: Service[] = [
     ],
   },
   {
-    num: "04",
     code: "Market Performance",
     title: "Digital Marketing",
     slug: "digital-marketing",
@@ -103,7 +99,6 @@ export const services: Service[] = [
     ],
   },
   {
-    num: "05",
     code: "Customer Intelligence",
     title: "Email Marketing & Automation",
     slug: "email-marketing-automation",
@@ -118,7 +113,6 @@ export const services: Service[] = [
     ],
   },
   {
-    num: "06",
     code: "Strategic Positioning",
     title: "Brand Strategy & Marketing",
     slug: "brand-strategy-marketing",
@@ -130,6 +124,34 @@ export const services: Service[] = [
       "Competitive analysis",
       "Positioning",
       "Brand messaging",
+    ],
+  },
+  {
+    code: "Creative Production",
+    title: "Video Editing & Motion Graphics",
+    slug: "video-editing-motion-graphics",
+    description:
+      "Transforming raw footage and creative concepts into engaging, professionally edited video content. Our services include promotional videos, corporate videos, social media reels, motion graphics, visual storytelling, transitions, sound design, and video optimisation for different digital platforms. We produce compelling video content that captures attention, communicates brand messages, and strengthens digital engagement.",
+    deliverables: [
+      "Promotional videos",
+      "Corporate videos",
+      "Social media reels",
+      "Motion graphics",
+      "Sound design",
+    ],
+  },
+  {
+    code: "Intelligent Automation",
+    title: "AI Automation & Business Integration",
+    slug: "ai-automation-business-integration",
+    description:
+      "Designing intelligent automation systems that streamline business operations, improve productivity, and enhance customer experiences. Our services include AI-powered workflows, chatbot development, business process automation, application integration, automated customer communication, and AI-assisted operational systems that reduce repetitive tasks and support business efficiency.",
+    deliverables: [
+      "AI-powered workflows",
+      "Chatbot development",
+      "Process automation",
+      "App integration",
+      "Automated communication",
     ],
   },
 ];

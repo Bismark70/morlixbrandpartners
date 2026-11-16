@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us — Book a Free Consultation",
   description:
-    "Reach Morlix Brand Partners by email or send us a message about your project. We typically respond within one business day.",
+    "Reach Morlix Brand by email or WhatsApp, or send us a message about your project. We typically respond within one business day.",
   openGraph: {
     title: `Contact ${site.legalName} — Book a Free Consultation`,
     description:

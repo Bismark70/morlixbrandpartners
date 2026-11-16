@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ————————————————————————————————
-   MORLIX BRAND PARTNERS — Design System
+   MORLIX BRAND — Design System
    Palette extracted from the logo:
    • Deep navy (wordmark)   #12386B
    • Ocean / cyan (M folds) #2B8FD0 → #35B6DF
@@ -137,6 +137,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --background: #050e1c;
   --foreground: #e8eef7;
   --card: #0a2140;
@@ -214,6 +215,11 @@
   .pause-on-hover:hover .animate-marquee {
     animation-play-state: paused;
   }
+}
+
+/* Dark-mode dot grids: navy dots are invisible on dark backgrounds */
+.dark .bg-dots-light {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
 }
 
 /* Respect users who prefer reduced motion */

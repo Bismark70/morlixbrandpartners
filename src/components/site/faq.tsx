@@ -9,12 +9,12 @@ import { Reveal } from "@/components/site/reveal";
 
 const faqs = [
   {
-    q: "How do we start working with Morlix Brand Partners?",
+    q: "How do we start working with Morlix Brand?",
     a: "It begins with a free consultation. We take time to understand your organization — your current position, ambitions, audience, and challenges — then recommend practical solutions aligned with your objectives. From there, we develop a clear approach and proposal tailored to your needs.",
   },
   {
-    q: "Do you only offer these six services?",
-    a: "These six are our launch services — the capabilities most organizations need first. Morlix Brand Partners is built as a multidisciplinary brand and digital solutions company, and our ecosystem already extends into software solutions, AI and automation, data intelligence, digital consulting, and training, which we will introduce as the organization grows.",
+    q: "Do you only offer these services?",
+    a: "Not at all. The services listed here are the capabilities organizations need most often. Morlix Brand is built as a multidisciplinary brand and digital solutions company, and our ecosystem extends into software solutions, data intelligence, digital consulting, and training as we continue to grow.",
   },
   {
     q: "Who does Morlix work with?",
@@ -36,7 +36,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="relative scroll-mt-20 bg-white py-20 sm:py-28">
+    <section id="faq" className="relative scroll-mt-20 bg-white py-20 sm:py-28 dark:bg-transparent">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"
@@ -49,9 +49,9 @@ export function Faq() {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="rounded-2xl border border-border bg-muted/50 px-6 shadow-none transition-colors data-[state=open]:border-flame-500/30 data-[state=open]:bg-white data-[state=open]:shadow-md"
+                className="rounded-2xl border border-border bg-muted/50 px-6 shadow-none transition-colors data-[state=open]:border-flame-500/30 data-[state=open]:bg-white data-[state=open]:shadow-md dark:data-[state=open]:bg-card"
               >
-                <AccordionTrigger className="py-5 text-left font-display text-base font-semibold text-navy-800 hover:no-underline [&>svg]:text-flame-600">
+                <AccordionTrigger className="py-5 text-left font-display text-base font-semibold text-navy-800 hover:no-underline dark:text-slate-100 [&>svg]:text-flame-600">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground">
