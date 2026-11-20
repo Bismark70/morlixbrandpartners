@@ -26,7 +26,7 @@ export const site = {
      · linkedin    : company LinkedIn page, linked from the footer
                      and the contact page.
   ---------------------------------------------------------- */
-  email: "info@morlixbrandpartners.com",
+  email: "info@morlixbrand.com",
   emailTo: "hello@morlixbrandpartners.com",
   whatsappLink: "https://wa.me/233591517852",
   linkedin: "https://www.linkedin.com/company/health-synergy-mpf/",

@@ -34,7 +34,6 @@ export function CtaBanner() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
             Book a free consultation — we&apos;ll understand where your organization
             stands, where you want to go, and map the practical steps to get there.
-            No pressure, no obligation.
           </p>
           <div className="mt-9 flex justify-center">
             <Button asChild size="lg" className="h-13 rounded-full bg-gradient-flame px-8 text-base text-white shadow-xl shadow-flame-600/30 transition-transform hover:scale-[1.02]">
