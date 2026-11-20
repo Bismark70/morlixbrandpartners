@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Mail, MessageCircle } from "lucide-react";
 import { site, services } from "@/lib/site";
 
 const quickLinks = [
@@ -79,7 +79,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact — email + WhatsApp */}
+          {/* Contact — email + WhatsApp + LinkedIn (numbers never shown, links only) */}
           <div>
             <h3 className="font-display text-xs font-bold uppercase tracking-[0.16em] text-white/85">
               Get In Touch
@@ -98,7 +98,16 @@ export function Footer() {
               className="group mt-2.5 flex items-start gap-3 text-sm text-white/60 transition-colors hover:text-glow-amber"
             >
               <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-white/40 group-hover:text-glow-amber" aria-hidden="true" />
-              WhatsApp — {site.whatsapp}
+              WhatsApp
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-2.5 flex items-start gap-3 text-sm text-white/60 transition-colors hover:text-glow-amber"
+            >
+              <Linkedin className="mt-0.5 h-4 w-4 shrink-0 text-white/40 group-hover:text-glow-amber" aria-hidden="true" />
+              LinkedIn
             </a>
           </div>
         </div>

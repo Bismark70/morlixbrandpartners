@@ -37,12 +37,12 @@ export function Services() {
               <AccordionItem
                 key={service.slug}
                 value={service.slug}
-                className="group rounded-2xl border border-border bg-white px-5 shadow-sm transition-all duration-300 hover:border-flame-500/40 hover:bg-accent hover:shadow-md dark:border-white/10 dark:bg-card dark:hover:border-flame-500/40 dark:hover:bg-white/[0.06] data-[state=open]:border-transparent data-[state=open]:bg-[linear-gradient(120deg,#fbae3c_0%,#f97316_45%,#e8481d_100%)] data-[state=open]:shadow-xl data-[state=open]:shadow-flame-600/30 sm:px-7"
+                className="group rounded-2xl border border-flame-500/25 bg-[#fff6ea] px-5 shadow-sm transition-all duration-300 hover:border-flame-500/45 hover:bg-[#ffe9d2] hover:shadow-md dark:border-white/10 dark:bg-card dark:hover:border-flame-500/40 dark:hover:bg-white/[0.06] data-[state=open]:border-transparent data-[state=open]:bg-[linear-gradient(120deg,#fbae3c_0%,#f97316_45%,#e8481d_100%)] data-[state=open]:shadow-xl data-[state=open]:shadow-flame-600/30 sm:px-7"
               >
                 <AccordionTrigger className="gap-4 py-5 hover:no-underline [&>svg]:hidden sm:py-6">
                   {/* Left: category / title */}
                   <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-flame-600 transition-colors duration-300 group-data-[state=open]:text-white/85">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-flame-700 transition-colors duration-300 group-data-[state=open]:text-white/85 dark:text-flame-400">
                       {service.code}
                     </span>
                     <span className="font-display text-lg font-bold leading-snug text-navy-800 transition-colors duration-300 group-data-[state=open]:text-white sm:text-xl dark:text-slate-100">
@@ -72,7 +72,7 @@ export function Services() {
                     {service.deliverables.map((d) => (
                       <li
                         key={d}
-                        className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-medium text-navy-700 transition-colors duration-300 group-data-[state=open]:bg-white/15 group-data-[state=open]:text-white dark:text-slate-200 dark:group-data-[state=open]:bg-white/15 dark:group-data-[state=open]:text-white"
+                        className="rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-medium text-navy-700 transition-colors duration-300 group-data-[state=open]:bg-white/15 group-data-[state=open]:text-white dark:bg-white/10 dark:text-slate-200 dark:group-data-[state=open]:bg-white/15 dark:group-data-[state=open]:text-white"
                       >
                         {d}
                       </li>

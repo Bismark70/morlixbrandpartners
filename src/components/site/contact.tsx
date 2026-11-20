@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   ArrowRight,
   MessageCircle,
+  Linkedin,
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -138,7 +139,7 @@ export function Contact() {
                     Chat with us on WhatsApp
                   </p>
                   <p className="mt-2 font-display text-xl font-bold leading-snug text-navy-800 dark:text-slate-100 sm:text-2xl">
-                    {site.whatsapp}
+                    We&apos;re one message away
                   </p>
                   <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#25d366]/10 px-4 py-2 text-sm font-semibold text-navy-800 dark:text-slate-100 ring-1 ring-[#25d366]/30 transition-colors duration-300 group-hover:bg-[#25d366] group-hover:text-white">
                     Start a chat
@@ -166,6 +167,22 @@ export function Contact() {
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Response time</p>
                     <p className="font-display text-base font-semibold text-navy-800 dark:text-slate-100">{site.responseNote}</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex items-start gap-4 border-t border-border pt-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-navy-700 dark:bg-white/10 dark:text-slate-200">
+                    <Linkedin className="h-5.5 w-5.5" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Follow us</p>
+                    <a
+                      href={site.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-display text-base font-semibold text-navy-800 transition-colors hover:text-flame-600 dark:text-slate-100 dark:hover:text-glow-amber"
+                    >
+                      Morlix Brand on LinkedIn
+                    </a>
                   </div>
                 </div>
               </div>

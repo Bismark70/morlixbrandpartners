@@ -14,17 +14,22 @@ export const site = {
   pillars: ["Strategy", "Creativity", "Technology", "Innovation", "Impact"],
 
   /* ----------------------------------------------------------
-     CONTACT DETAILS — ★ replace the placeholders below ★
-     · email   : the business inbox shown on the contact page,
-                 footer & metadata — the single contact channel
-     · emailTo : the inbox that should receive form submissions
-                 once you wire up email delivery
-                 (see src/app/api/contact/route.ts)
+     CONTACT DETAILS — ★ EDIT THIS BLOCK ★
+     · email       : the business inbox shown on the contact page,
+                     footer & metadata — the single contact channel
+     · emailTo     : the inbox that should receive form submissions
+                     once you wire up email delivery
+                     (see src/app/api/contact/route.ts)
+     · whatsappLink: WhatsApp chat link (wa.me). Used as a plain
+                     link only — the phone number itself is never
+                     displayed anywhere on the site.
+     · linkedin    : company LinkedIn page, linked from the footer
+                     and the contact page.
   ---------------------------------------------------------- */
   email: "info@morlixbrandpartners.com",
   emailTo: "hello@morlixbrandpartners.com",
-  whatsapp: "059 151 7852",
   whatsappLink: "https://wa.me/233591517852",
+  linkedin: "https://www.linkedin.com/company/health-synergy-mpf/",
   location: "Serving clients locally & globally",
   responseNote: "We typically respond within one business day.",
 } as const;
