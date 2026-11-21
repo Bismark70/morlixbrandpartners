@@ -215,6 +215,20 @@
   .pause-on-hover:hover .animate-marquee {
     animation-play-state: paused;
   }
+  /* Page enter transition — plays when the route changes (home ⇄ contact) */
+  @keyframes page-enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-page-enter {
+    animation: page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
 }
 
 /* Dark-mode dot grids: navy dots are invisible on dark backgrounds */
@@ -230,7 +244,8 @@
   .animate-marquee,
   .animate-orbit,
   .animate-float,
-  .animate-pulse-ring {
+  .animate-pulse-ring,
+  .animate-page-enter {
     animation: none !important;
   }
 }

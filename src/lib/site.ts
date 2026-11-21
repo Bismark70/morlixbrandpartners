@@ -11,7 +11,7 @@ export const site = {
   shortName: "Morlix",
   legalName: "MORLIX BRAND",
   tagline: "Your Vision. Our Partnership. Greater Possibilities.",
-  pillars: ["Strategy", "Creativity", "Technology", "Innovation", "Impact"],
+  pillars: ["Strategy", "Creativity", "Technology", "Innovation"],
 
   /* ----------------------------------------------------------
      CONTACT DETAILS — ★ EDIT THIS BLOCK ★
@@ -26,7 +26,7 @@ export const site = {
      · linkedin    : company LinkedIn page, linked from the footer
                      and the contact page.
   ---------------------------------------------------------- */
-  email: "info@morlixbrand.com",
+  email: "info@morlixbrandpartners.com",
   emailTo: "hello@morlixbrandpartners.com",
   whatsappLink: "https://wa.me/233591517852",
   linkedin: "https://www.linkedin.com/company/health-synergy-mpf/",
@@ -39,7 +39,6 @@ export const site = {
    `slug` is ready for future dedicated service pages.
 ------------------------------------------------------------ */
 export type Service = {
-  code: string;
   title: string;
   slug: string;
   description: string;
@@ -48,7 +47,6 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    code: "Digital Presence",
     title: "Social Media Management",
     slug: "social-media-management",
     description:
@@ -62,7 +60,6 @@ export const services: Service[] = [
     ],
   },
   {
-    code: "Visual Intelligence",
     title: "Creative Design & Brand Identity",
     slug: "creative-design-brand-identity",
     description:
@@ -76,7 +73,6 @@ export const services: Service[] = [
     ],
   },
   {
-    code: "Digital Infrastructure",
     title: "Web Design & Development",
     slug: "web-design-development",
     description:
@@ -90,7 +86,6 @@ export const services: Service[] = [
     ],
   },
   {
-    code: "Market Performance",
     title: "Digital Marketing",
     slug: "digital-marketing",
     description:
@@ -104,7 +99,6 @@ export const services: Service[] = [
     ],
   },
   {
-    code: "Customer Intelligence",
     title: "Email Marketing & Automation",
     slug: "email-marketing-automation",
     description:
@@ -118,7 +112,6 @@ export const services: Service[] = [
     ],
   },
   {
-    code: "Strategic Positioning",
     title: "Brand Strategy & Marketing",
     slug: "brand-strategy-marketing",
     description:
@@ -132,7 +125,6 @@ export const services: Service[] = [
     ],
   },
   {
-    code: "Creative Production",
     title: "Video Editing & Motion Graphics",
     slug: "video-editing-motion-graphics",
     description:
@@ -146,7 +138,6 @@ export const services: Service[] = [
     ],
   },
   {
-    code: "Intelligent Automation",
     title: "AI Automation & Business Integration",
     slug: "ai-automation-business-integration",
     description:
@@ -158,48 +149,6 @@ export const services: Service[] = [
       "App integration",
       "Automated communication",
     ],
-  },
-];
-
-/* ------------------------------------------------------------
-   WORKING PROCESS — Discover → Evolve
------------------------------------------------------------- */
-export const processSteps = [
-  {
-    num: "01",
-    title: "Discover",
-    description:
-      "We first understand the organization, its objectives, audience, challenges, competitors, and opportunities.",
-  },
-  {
-    num: "02",
-    title: "Strategize",
-    description:
-      "We develop a clear approach based on what the organization actually needs.",
-  },
-  {
-    num: "03",
-    title: "Create",
-    description:
-      "We develop the required creative, strategic, and technical solutions.",
-  },
-  {
-    num: "04",
-    title: "Implement",
-    description:
-      "We put the strategy into action and ensure that solutions are properly deployed.",
-  },
-  {
-    num: "05",
-    title: "Measure",
-    description:
-      "We evaluate performance using relevant data and feedback.",
-  },
-  {
-    num: "06",
-    title: "Evolve",
-    description:
-      "We refine our approach as the organization, audience, technology, and market continue to change.",
   },
 ];
 

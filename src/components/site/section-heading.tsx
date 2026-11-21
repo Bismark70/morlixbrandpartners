@@ -3,7 +3,7 @@ import { Reveal } from "@/components/site/reveal";
 
 type SectionHeadingProps = {
   eyebrow: string;
-  title: React.ReactNode;
+  title?: React.ReactNode;
   description?: string;
   align?: "left" | "center";
   tone?: "light" | "dark";
@@ -41,14 +41,16 @@ export function SectionHeading({
         <span className={cn("h-1.5 w-1.5 rounded-full", dark ? "bg-glow-amber" : "bg-flame-500")} />
         {eyebrow}
       </span>
-      <h2
-        className={cn(
-          "mt-5 font-display text-3xl font-bold leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.75rem]",
-          dark ? "text-white" : "text-navy-800 dark:text-slate-100"
-        )}
-      >
-        {title}
-      </h2>
+      {title ? (
+        <h2
+          className={cn(
+            "mt-5 font-display text-3xl font-bold leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.75rem]",
+            dark ? "text-white" : "text-navy-800 dark:text-slate-100"
+          )}
+        >
+          {title}
+        </h2>
+      ) : null}
       {description ? (
         <p
           className={cn(

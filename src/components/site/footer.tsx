@@ -5,7 +5,6 @@ import { site, services } from "@/lib/site";
 
 const quickLinks = [
   { label: "Services", href: "/#services" },
-  { label: "Process", href: "/#process" },
   { label: "About Us", href: "/#about" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },
@@ -33,7 +32,7 @@ export function Footer() {
                 MORLIX <span className="text-gradient-flame">BRAND</span>
               </p>
               <p className="mt-1.5 text-[10px] uppercase tracking-[0.2em] text-white/50">
-                Strategy · Creativity · Technology · Innovation · Impact
+                {site.pillars.join(" · ")}
               </p>
               <p className="mt-3 text-sm font-semibold text-glow-amber">
                 {site.tagline}

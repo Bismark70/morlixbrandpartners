@@ -1,6 +1,6 @@
-import { Quote } from "lucide-react";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Reveal } from "@/components/site/reveal";
+import { VisionMission } from "@/components/site/vision-mission";
 
 export function About() {
   return (
@@ -43,48 +43,12 @@ export function About() {
                 </p>
               </div>
             </Reveal>
-
-            {/* Philosophy quote */}
-            <Reveal delay={0.14}>
-              <blockquote className="mt-8 rounded-2xl border border-flame-500/20 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-card">
-                <Quote className="h-5 w-5 text-flame-500" aria-hidden="true" />
-                <p className="mt-2 font-display text-lg font-semibold leading-snug text-navy-800 dark:text-slate-100">
-                  Think strategically. Build confidently. Grow sustainably.
-                </p>
-                <footer className="mt-2 text-sm text-muted-foreground">
-                  Our long-term ambition: a leading African brand development,
-                  digital solutions, and innovation company with global relevance.
-                </footer>
-              </blockquote>
-            </Reveal>
           </div>
 
-          {/* Vision & Mission cards */}
-          <div className="flex flex-col gap-5 lg:pt-4">
-            <Reveal delay={0.1}>
-              <article className="group relative overflow-hidden rounded-2xl bg-gradient-navy p-8 text-white shadow-xl shadow-navy-900/25">
-                <div className="bg-dots absolute inset-0 opacity-70" aria-hidden="true" />
-                <div className="relative">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-glow-amber">Our Vision</p>
-                  <p className="mt-4 font-display text-xl font-semibold leading-relaxed">
-                    To become a globally recognized brand development, digital
-                    solutions, and innovation company — empowering organizations to
-                    thrive, transform, and lead in the digital economy.
-                  </p>
-                </div>
-              </article>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <article className="rounded-2xl border border-border bg-white p-8 shadow-sm dark:border-white/10 dark:bg-card">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-flame-600">Our Mission</p>
-                <p className="mt-4 font-display text-xl font-semibold leading-relaxed text-navy-800 dark:text-slate-100">
-                  To empower organizations through innovative technology, creative
-                  excellence, strategic marketing, and integrated brand solutions
-                  that transform ideas into measurable impact.
-                </p>
-              </article>
-            </Reveal>
-          </div>
+          {/* Vision & Mission — click a card to reveal the text */}
+          <Reveal delay={0.1}>
+            <VisionMission />
+          </Reveal>
         </div>
       </div>
     </section>

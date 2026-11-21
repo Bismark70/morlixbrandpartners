@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.legalName} — ${site.tagline}`,
     description:
-      "Strategy. Creativity. Technology. Innovation. Impact. We help organizations build stronger brands and operate more effectively in an increasingly digital world.",
+      "Strategy. Creativity. Technology. Innovation. We help organizations build stronger brands and operate more effectively in an increasingly digital world.",
     siteName: site.legalName,
     type: "website",
     images: [{ url: "/logo-full.png", width: 720, height: 479 }],

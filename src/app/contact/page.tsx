@@ -42,7 +42,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
       />
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 animate-page-enter">
         {/* ——— Page hero ——— */}
         <section className="relative overflow-hidden bg-gradient-navy pb-14 pt-28 text-white sm:pb-16 sm:pt-36">
           <div className="bg-dots absolute inset-0" aria-hidden="true" />

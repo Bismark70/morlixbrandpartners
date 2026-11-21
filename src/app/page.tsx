@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/site/navbar";
 import { Hero } from "@/components/site/hero";
 import { Services } from "@/components/site/services";
-import { Process } from "@/components/site/process";
 import { About } from "@/components/site/about";
 import { CtaBanner } from "@/components/site/cta-banner";
 import { Faq } from "@/components/site/faq";
@@ -29,10 +28,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 animate-page-enter">
         <Hero />
         <Services />
-        <Process />
         <About />
         <CtaBanner />
         <Faq />
