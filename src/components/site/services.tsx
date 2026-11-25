@@ -28,22 +28,28 @@ export function Services() {
               <AccordionItem
                 key={service.slug}
                 value={service.slug}
-                className="group rounded-2xl border border-border bg-white px-5 shadow-sm transition-all duration-300 hover:border-navy-700/25 hover:bg-secondary hover:shadow-md dark:border-white/10 dark:bg-card dark:hover:border-white/20 dark:hover:bg-white/[0.08] data-[state=open]:border-transparent data-[state=open]:bg-[linear-gradient(120deg,#fbae3c_0%,#f97316_45%,#e8481d_100%)] data-[state=open]:shadow-xl data-[state=open]:shadow-flame-600/30 sm:px-7"
+                className="group relative overflow-hidden rounded-2xl border border-white/30 bg-[linear-gradient(120deg,#f97316_0%,#ea580c_100%)] px-5 shadow-md shadow-flame-600/25 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-white/60 hover:shadow-xl hover:shadow-flame-600/40 data-[state=open]:border-transparent data-[state=open]:bg-[linear-gradient(120deg,#e8481d_0%,#c2410c_100%)] data-[state=open]:shadow-xl data-[state=open]:shadow-flame-600/40 data-[state=open]:hover:translate-y-0 sm:px-7"
               >
-                <AccordionTrigger className="gap-4 py-5 hover:no-underline [&>svg]:hidden sm:py-6">
+                {/* Shine sweep on hover */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -translate-x-[120%] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[120%]"
+                />
+
+                <AccordionTrigger className="relative gap-4 py-5 hover:no-underline [&>svg]:hidden sm:py-6">
                   {/* Left: title */}
                   <span className="flex min-w-0 flex-1 flex-col items-start">
-                    <span className="font-display text-lg font-bold leading-snug text-navy-800 transition-colors duration-300 group-data-[state=open]:text-white sm:text-xl dark:text-slate-100">
+                    <span className="font-display text-lg font-bold leading-snug text-white transition-[color,transform] duration-300 group-hover:translate-x-1 sm:text-xl">
                       {service.title}
                     </span>
                   </span>
 
                   {/* Right: plus / minus toggle */}
                   <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-navy-700/20 text-navy-700 transition-all duration-300 group-data-[state=open]:border-white/50 group-data-[state=open]:bg-white/15 group-data-[state=open]:text-white dark:border-white/15 dark:text-slate-300"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/60 bg-white/15 text-white transition-all duration-300 group-hover:scale-110 group-hover:border-white group-hover:bg-white/25 group-data-[state=open]:border-white/50 group-data-[state=open]:bg-white/15"
                     aria-hidden="true"
                   >
-                    <Plus className="h-5 w-5 group-data-[state=open]:hidden" strokeWidth={2.2} />
+                    <Plus className="h-5 w-5 transition-transform duration-500 group-hover:rotate-90 group-data-[state=open]:hidden" strokeWidth={2.2} />
                     <Minus className="hidden h-5 w-5 group-data-[state=open]:block" strokeWidth={2.2} />
                   </span>
                 </AccordionTrigger>
