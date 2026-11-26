@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, CalendarCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { site, audience } from "@/lib/site";
+import { site } from "@/lib/site";
 
 const ease = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -51,18 +51,16 @@ export function Hero() {
               {...item(0.08)}
               className="mt-6 font-display text-4xl font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.6rem]"
             >
-              Your Vision.
+              Building Brands.
               <br />
-              Our Partnership.
-              <br />
-              <span className="text-gradient-flame">Greater Possibilities.</span>
+              <span className="text-gradient-flame">Advancing Business</span>
             </motion.h1>
 
             <motion.p {...item(0.16)} className="mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-              {site.name} is a brand development, digital solutions, and business
-              innovation company — bringing together strategy, creativity,
-              technology, marketing, and data under one roof to turn visibility
-              into measurable results.
+              We combine strategic thinking, creative expertise and digital
+              technology to help businesses and organisations build stronger
+              brands, expand their digital presence and achieve sustainable
+              growth.
             </motion.p>
 
             {/* Pillars */}
@@ -150,20 +148,6 @@ export function Hero() {
               </div>
             </div>
           </motion.div>
-        </div>
-      </div>
-
-      {/* ——— Who we serve ticker ——— */}
-      <div className="relative border-t border-white/10 bg-navy-950/40 py-4 backdrop-blur-sm pause-on-hover" aria-label="Who we serve">
-        <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
-          <div className="animate-marquee flex w-max items-center gap-10 pr-10">
-            {[...audience, ...audience].map((item, i) => (
-              <span key={i} className="flex items-center gap-10 whitespace-nowrap text-sm font-medium tracking-wide text-white/60">
-                {item}
-                <span className="inline-block h-1.5 w-1.5 rotate-45 bg-glow-amber/70" aria-hidden="true" />
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

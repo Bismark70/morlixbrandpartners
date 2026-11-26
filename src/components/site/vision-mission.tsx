@@ -82,14 +82,14 @@ export function VisionMission() {
   return (
     <div className="flex flex-col gap-5 lg:pt-4">
       <VisionMissionCard tone="navy" title="Our Vision">
-        To become a globally recognized brand development, digital solutions, and
-        innovation company — empowering organizations to thrive, transform, and
-        lead in the digital economy.
+        To become a leading global brand development and digital solutions
+        company, recognised for driving business growth through strategic
+        innovation, creativity and technology.
       </VisionMissionCard>
       <VisionMissionCard tone="light" title="Our Mission">
-        To empower organizations through innovative technology, creative
-        excellence, strategic marketing, and integrated brand solutions that
-        transform ideas into measurable impact.
+        To equip businesses and organisations with strategic branding, creative
+        communication and integrated digital solutions that strengthen their
+        market presence and advance their objectives.
       </VisionMissionCard>
     </div>
   );

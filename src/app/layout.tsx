@@ -26,17 +26,18 @@ export const metadata: Metadata = {
     template: `%s | ${site.legalName}`,
   },
   description:
-    "Morlix Brand is a brand development, digital solutions, and business innovation company — combining strategy, creativity, technology, marketing, and data to build stronger brands and meaningful digital growth.",
+    "We combine strategic thinking, creative expertise and digital technology to help businesses and organisations build stronger brands, expand their digital presence and achieve sustainable growth.",
   keywords: [
     "brand development",
     "digital solutions",
     "social media management",
-    "web design and development",
+    "web design and maintenance",
     "digital marketing",
     "SEO",
     "email marketing automation",
     "brand strategy",
     "creative design",
+    "AI automation",
     "Morlix Brand",
   ],
   authors: [{ name: site.legalName }],
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.legalName} — ${site.tagline}`,
     description:
-      "Strategy. Creativity. Technology. Innovation. We help organizations build stronger brands and operate more effectively in an increasingly digital world.",
+      "We combine strategic thinking, creative expertise and digital technology to help businesses and organisations build stronger brands, expand their digital presence and achieve sustainable growth.",
     siteName: site.legalName,
     type: "website",
     images: [{ url: "/logo-full.png", width: 720, height: 479 }],
@@ -55,8 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${site.legalName} — ${site.tagline}`,
-    description:
-      "Brand development, digital solutions, and business innovation — under one partner.",
+    description: "Building Brands. Advancing Business",
   },
   robots: { index: true, follow: true },
 };

@@ -10,8 +10,8 @@ export const site = {
   name: "Morlix Brand",
   shortName: "Morlix",
   legalName: "MORLIX BRAND",
-  tagline: "Your Vision. Our Partnership. Greater Possibilities.",
-  pillars: ["Strategy", "Creativity", "Technology", "Innovation"],
+  tagline: "Building Brands. Advancing Business",
+  pillars: ["Strategy", "Brand Development", "Digital Solutions", "Innovation"],
 
   /* ----------------------------------------------------------
      CONTACT DETAILS — ★ EDIT THIS BLOCK ★
@@ -47,23 +47,23 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    title: "Social Media Management",
-    slug: "social-media-management",
+    title: "Brand Strategy & Development",
+    slug: "brand-strategy-development",
     description:
-      "Managing and growing brand presence across digital platforms through content planning, content creation, publishing, audience engagement, community management, and performance tracking. We build structured social media systems that strengthen visibility, engagement, and brand relevance.",
+      "Developing brand strategies, positioning frameworks and identity systems that establish a clear, consistent and competitive market presence.",
     deliverables: [
-      "Content planning",
-      "Content creation",
-      "Publishing",
-      "Community management",
-      "Performance tracking",
+      "Brand strategy",
+      "Positioning frameworks",
+      "Identity systems",
+      "Market research",
+      "Brand messaging",
     ],
   },
   {
     title: "Creative Design & Brand Identity",
     slug: "creative-design-brand-identity",
     description:
-      "Developing distinctive brand identities and compelling visual assets, from logo design and brand guidelines to marketing graphics, digital creatives, and promotional materials. We create cohesive visual systems that communicate brand value and establish a recognisable market presence.",
+      "Creating professional visual communication materials, brand identities and marketing designs that communicate brand values and strengthen recognition.",
     deliverables: [
       "Logo & identity",
       "Brand guidelines",
@@ -73,23 +73,23 @@ export const services: Service[] = [
     ],
   },
   {
-    title: "Web Design & Development",
-    slug: "web-design-development",
+    title: "Social Media Management",
+    slug: "social-media-management",
     description:
-      "Designing, developing, and maintaining responsive websites tailored to business needs. Our services cover website architecture, user interface design, e-commerce integration, functionality, and optimisation to deliver seamless digital experiences that convert visitors into customers.",
+      "Managing digital platforms through strategic content planning, creative development, publishing, audience engagement and performance analysis.",
     deliverables: [
-      "Website architecture",
-      "UI design",
-      "E-commerce integration",
-      "Optimisation",
-      "Maintenance",
+      "Content planning",
+      "Content creation",
+      "Publishing",
+      "Community management",
+      "Performance tracking",
     ],
   },
   {
     title: "Digital Marketing",
     slug: "digital-marketing",
     description:
-      "Planning and executing targeted digital campaigns to increase brand awareness, attract qualified audiences, and drive business growth. Our approach covers paid advertising, search engine optimisation (SEO), campaign management, audience targeting, and performance analytics.",
+      "Planning and executing digital campaigns that increase brand awareness, reach target audiences and generate measurable business results.",
     deliverables: [
       "Paid advertising",
       "SEO",
@@ -99,10 +99,23 @@ export const services: Service[] = [
     ],
   },
   {
+    title: "Web Design & Maintenance",
+    slug: "web-design-maintenance",
+    description:
+      "Designing and maintaining responsive, functional websites that strengthen digital presence, communicate brand value and support business objectives.",
+    deliverables: [
+      "Website architecture",
+      "UI design",
+      "E-commerce integration",
+      "Optimisation",
+      "Maintenance",
+    ],
+  },
+  {
     title: "Email Marketing & Automation",
     slug: "email-marketing-automation",
     description:
-      "Building strategic email communication systems that connect businesses with their audiences. From campaign design and mailing list management to automated workflows, lead nurturing, customer segmentation, and performance monitoring, we turn communication into a sustainable customer engagement channel.",
+      "Developing targeted email campaigns and automated communication systems that improve customer engagement, retention and conversion.",
     deliverables: [
       "Campaign design",
       "Mailing list management",
@@ -112,23 +125,10 @@ export const services: Service[] = [
     ],
   },
   {
-    title: "Brand Strategy & Marketing",
-    slug: "brand-strategy-marketing",
-    description:
-      "Defining how businesses position, communicate, and compete in their markets. We provide brand development, market research, competitive analysis, positioning, marketing strategy, and brand messaging to create a clear market identity and a coordinated direction for growth.",
-    deliverables: [
-      "Brand development",
-      "Market research",
-      "Competitive analysis",
-      "Positioning",
-      "Brand messaging",
-    ],
-  },
-  {
     title: "Video Editing & Motion Graphics",
     slug: "video-editing-motion-graphics",
     description:
-      "Transforming raw footage and creative concepts into engaging, professionally edited video content. Our services include promotional videos, corporate videos, social media reels, motion graphics, visual storytelling, transitions, sound design, and video optimisation for different digital platforms. We produce compelling video content that captures attention, communicates brand messages, and strengthens digital engagement.",
+      "Producing and refining visual content, promotional videos and motion graphics for digital communication and marketing.",
     deliverables: [
       "Promotional videos",
       "Corporate videos",
@@ -141,7 +141,7 @@ export const services: Service[] = [
     title: "AI Automation & Business Integration",
     slug: "ai-automation-business-integration",
     description:
-      "Designing intelligent automation systems that streamline business operations, improve productivity, and enhance customer experiences. Our services include AI-powered workflows, chatbot development, business process automation, application integration, automated customer communication, and AI-assisted operational systems that reduce repetitive tasks and support business efficiency.",
+      "Integrating appropriate AI tools and automated workflows to improve business processes, operational efficiency and digital productivity.",
     deliverables: [
       "AI-powered workflows",
       "Chatbot development",
@@ -153,17 +153,14 @@ export const services: Service[] = [
 ];
 
 /* ------------------------------------------------------------
-   WHO WE SERVE — used in the hero ticker
+   WHO WE WORK WITH — audience list for the dedicated section
 ------------------------------------------------------------ */
 export const audience = [
-  "Startups",
-  "Small & Medium Enterprises",
-  "Corporations",
-  "NGOs & Nonprofits",
-  "Government Institutions",
-  "Educational Institutions",
-  "Healthcare Organizations",
-  "Entrepreneurs",
-  "Professionals",
-  "Personal Brands",
+  "Established corporations",
+  "NGOs and nonprofit organisations",
+  "Government and public institutions",
+  "Educational and healthcare institutions",
+  "Entrepreneurs and personal brands",
+  "Startups and emerging businesses",
+  "Small and medium-sized enterprises",
 ];

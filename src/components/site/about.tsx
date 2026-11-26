@@ -14,32 +14,19 @@ export function About() {
               eyebrow="Who We Are"
               title={
                 <>
-                  Built for a world that{" "}
-                  <span className="text-gradient-ocean">no longer stands still.</span>
+                  Strategy Meets Creativity.{" "}
+                  <span className="text-gradient-ocean">Technology Drives Growth.</span>
                 </>
               }
             />
             <Reveal delay={0.08}>
-              <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
+              <div className="mt-6 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Having a logo, a website, or a social media account is no longer
-                  enough. Organizations need a clear identity, a professional digital
-                  presence, effective communication, the right technology, and
-                  strategies that translate visibility into meaningful results.
-                </p>
-                <p>
-                  That is where <strong className="font-semibold text-navy-800 dark:text-slate-100">Morlix Brand</strong> comes
-                  in. We believe branding, technology, marketing, creativity, data,
-                  and strategy should work together — a company&apos;s website should
-                  reflect its brand, its social media should communicate a consistent
-                  identity, and its data should inform decisions.
-                </p>
-                <p>
-                  When these elements work together, digital presence becomes more
-                  than visibility.{" "}
-                  <span className="font-semibold text-flame-600">
-                    It becomes a genuine business asset.
-                  </span>
+                  <strong className="font-semibold text-navy-800 dark:text-slate-100">MORLIX</strong> is a brand
+                  development and digital solutions company delivering integrated
+                  services that help businesses and organisations strengthen their
+                  identity, communicate effectively and compete in an evolving
+                  digital environment.
                 </p>
               </div>
             </Reveal>

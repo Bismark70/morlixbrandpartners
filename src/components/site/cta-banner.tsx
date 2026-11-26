@@ -29,12 +29,12 @@ export function CtaBanner() {
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <Reveal>
           <h2 className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            Ready to elevate <span className="text-gradient-flame">your brand?</span>
+            Let&apos;s Build <span className="text-gradient-flame">What Comes Next</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
-            Book a free consultation — we&apos;ll understand where your organization
-            stands, where you want to go, and map the practical steps to get there.
-            No pressure, no obligation.
+            Whether you are establishing a new brand, strengthening an existing
+            business or expanding your digital capabilities, MORLIX is ready to
+            help you move forward with clarity and purpose.
           </p>
           <div className="mt-9 flex justify-center">
             <Button asChild size="lg" className="h-13 rounded-full bg-gradient-flame px-8 text-base text-white shadow-xl shadow-flame-600/30 transition-transform hover:scale-[1.02]">
